@@ -1,6 +1,6 @@
 <?php
-$filename = basename($_SERVER['PHP_SELF']);
 function generateNavbar() {
+    $filename = basename($_SERVER['PHP_SELF']);
     echo '<div id="navbar" class="navbar">';
     echo "<a "; if ($filename == "index.php") {echo 'class="active" href="#"';} else {echo 'href="index.php"';} echo ">Home</a>";
     echo "<a "; if ($filename == "onlinecv.php") {echo 'class="active" href="#"';} else {echo 'href="onlinecv.php"';} echo ">Online CV</a>";
