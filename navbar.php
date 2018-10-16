@@ -1,7 +1,7 @@
 <?php
 function generateNavbar() {
     $filename = basename($_SERVER['PHP_SELF']);
-    echo '<div id="navbar" class="navbar">';
+    echo '<nav>';
     echo "<a "; if ($filename == "index.php") {echo 'class="active" href="#"';} else {echo 'href="index.php"';} echo ">Home</a>";
     echo "<a "; if ($filename == "onlinecv.php") {echo 'class="active" href="#"';} else {echo 'href="onlinecv.php"';} echo ">Online CV</a>";
     echo "<a "; if ($filename == "samples.php") {echo 'class="active" href="#"';} else {echo 'href="samples.php"';} echo ">Samples</a>";
@@ -12,7 +12,7 @@ function generateNavbar() {
     echo "<a class=" . '"right stackoverflow"' . ' id="stackoverflow" href="obfuscated" target="_blank"><i class="' . 'fa fa-stack-overflow"></i><span> Stack Overflow</span></a>';
     echo "<a class=" . '"right linkedin"' . ' id="linkedin" href="obfuscated" target="_blank"><i class="' . 'fa fa-linkedin"></i><span> LinkedIn</span></a>';
     echo "<a class=" . '"right github"' .  ' id="github" href="obfuscated" target="_blank"><i class="' . 'fa fa-github"></i><span> Github</span></a>';
-    echo '<a class="icon" id="icon" href="javascript:void(0)">&#9776;</a></div>';
+    echo '<a class="icon" id="icon" href="javascript:void(0)">&#9776;</a></nav>';
 }
 ?>
 
