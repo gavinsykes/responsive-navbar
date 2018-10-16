@@ -1,5 +1,5 @@
 
-.navbar {
+nav {
     margin: 0 -1em; /* These two lines are to make it the full width of the viewport, */
     padding: 0 1em; /* as in this instance I've added padding to the html element, normally though they would just be 0. */
     overflow: hidden;
@@ -10,7 +10,7 @@
     border: solid 1px 0px 0px 0px purple;
     border-radius: 0px 0px 10px 10px;
 }
-.navbar a {
+nav a {
     float: left;
     display: block;
     padding: 1em;
@@ -18,38 +18,38 @@
     text-decoration: none;
     color: var(--off-white); /* Variables can be set in the :root declaration, in this particular instance it would be :root{--off-white: #eeeeff;} */
 }
-.navbar a.active, .navbar a:hover{ /* Apply a different style to our active link, and have any links that are hovered hover duplicate it. */
+nav a.active, .navbar a:hover{ /* Apply a different style to our active link, and have any links that are hovered hover duplicate it. */
     background-color: orange;
     color: var(--soft-black); /* #080808 */
 }
-.navbar a:not(.active) {
+nav a:not(.active) {
     display: none; /* Specifically on smartphones, I don't want the none-active links to show up on the navbar, otherwise the navbar would take up the whole screen! */
 }
-.navbar a.active {
+nav a.active {
     display: block; /* Always display the active link */
 }
-.navbar a.right {
+nav a.right {
     float: right; /* Move certain links to the right-hand side of the navbar (this will only really take effect on wider screens). */
 }
-.navbar a.icon {
+nav a.icon {
     float: right; /* Float this to the right */
     font-size: 1.1em; /* Make it bigger as the Unicode icon I'm using is quite small */
     display: block; /* And make sure it is visible */
 }
-.navbar.responsive a { /* When JavaScript adds the responsive class, open the whole navbar */
+nav.responsive a { /* When JavaScript adds the responsive class, open the whole navbar */
     float: none; /* By making each link take up a line */
     display: block; /* And displaying all of them */
     text-align: left; /* Line them up neatly */
     padding: 8px; /* Lower the padding to make it a bit more compact */
     font-size: 0.8em; /* Make the text smaller to also make it a bit more compact */
 }
-.navbar.responsive a.icon {
+nav.responsive a.icon {
     text-align: center; /* The icon will be at the bottom so we now don't want it also on the right - move it into the middle. */
 }
-.navbar span {
+nav span {
     display: none; /* Each contact icon (GitHub, Twitter and so on) has some text next to it, but on larger screens the icons are large enough that they're not needed and on smaller screens they'll only appear in very small format, so they will be needed. */
 }
-.navbar.responsive span {
+nav.responsive span {
     display: inline; /* So when our navbar has the responsive class added, show the text. */
 }
 
@@ -58,7 +58,7 @@
     /* As it happens, I want it to behave in exactly the same way as it does on smartphones. */
 }
 @media (min-width: 800px) and (max-width: 1200px) and (orientation: landscape) {
-    .navbar a:not(.active) {
+    nav a:not(.active) {
         display: block; /* We now have the space to display all our links, so do that. */
     }
     .navbar a.icon {
@@ -66,10 +66,10 @@
     }
 }
 @media (min-width: 1201px) { /* We want our navbar to do the same on Desktops as we do on tablets being held in landscape. */
-    .navbar a:not(.active) {
+    nav a:not(.active) {
         display: block;
     }
-    .navbar a.icon {
+    nav a.icon {
         display: none;
     }
 }
