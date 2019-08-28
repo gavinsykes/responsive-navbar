@@ -1,75 +1,65 @@
-
+/* Prerequisites */
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "aside aside"
+    "footer footer";
+}
+/* End of prerequisites */
 nav {
-    margin: 0 -1em; /* These two lines are to make it the full width of the viewport, */
-    padding: 0 1em; /* as in this instance I've added padding to the html element, normally though they would just be 0. */
-    overflow: hidden;
-    position: sticky; /* These two lines are to make the navbar stick */
-    top: 0;           /* to the top of the page when the user scrolls down. */
-    z-index: 10;
-    background-color: purple;
-    border: solid 1px 0px 0px 0px purple;
-    border-radius: 0px 0px 10px 10px;
+  grid-area: nav;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  position: sticky;
+  top: 0;
+  background-color: #ddd;
 }
-nav a {
-    float: left;
-    display: block;
-    padding: 1em;
-    text-align: center;
-    text-decoration: none;
-    color: var(--off-white); /* Variables can be set in the :root declaration, in this particular instance it would be :root{--off-white: #eeeeff;} */
+nav * {
+  margin: 0;
+  padding: 0.3rem;
+  text-align: center;
+  text-decoration: none;
 }
-nav a.active, .navbar a:hover{ /* Apply a different style to our active link, and have any links that are hovered hover duplicate it. */
-    background-color: orange;
-    color: var(--soft-black); /* #080808 */
+nav a {display: flex; align-items: center;}
+nav a:not(.active),
+nav a:not(.open-icon) {display: none;}
+nav span {display: inline;}
+nav.open a {display: block;}
+nav a.active {display: block}
+nav div.middle {
+  display: none;
+  flex-grow: 1;
 }
-nav a:not(.active) {
-    display: none; /* Specifically on smartphones, I don't want the none-active links to show up on the navbar, otherwise the navbar would take up the whole screen! */
+nav div.open-icon {display: block; font-weight: bold;}
+nav a:hover {
+  text-decoration: underline;
 }
-nav a.active {
-    display: block; /* Always display the active link */
-}
-nav a.right {
-    float: right; /* Move certain links to the right-hand side of the navbar (this will only really take effect on wider screens). */
-}
-nav a.icon {
-    float: right; /* Float this to the right */
-    font-size: 1.1em; /* Make it bigger as the Unicode icon I'm using is quite small */
-    display: block; /* And make sure it is visible */
-}
-nav.responsive a { /* When JavaScript adds the responsive class, open the whole navbar */
-    float: none; /* By making each link take up a line */
-    display: block; /* And displaying all of them */
-    text-align: left; /* Line them up neatly */
-    padding: 8px; /* Lower the padding to make it a bit more compact */
-    font-size: 0.8em; /* Make the text smaller to also make it a bit more compact */
-}
-nav.responsive a.icon {
-    text-align: center; /* The icon will be at the bottom so we now don't want it also on the right - move it into the middle. */
-}
-nav span {
-    display: none; /* Each contact icon (GitHub, Twitter and so on) has some text next to it, but on larger screens the icons are large enough that they're not needed and on smaller screens they'll only appear in very small format, so they will be needed. */
-}
-nav.responsive span {
-    display: inline; /* So when our navbar has the responsive class added, show the text. */
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    /* This adjusts the navbar's appearance based on if the content is being viewed on a tablet being held in portrait. */
-    /* As it happens, I want it to behave in exactly the same way as it does on smartphones. */
-}
-@media (min-width: 800px) and (max-width: 1200px) and (orientation: landscape) {
-    nav a:not(.active) {
-        display: block; /* We now have the space to display all our links, so do that. */
-    }
-    .navbar a.icon {
-        display: none; /* The icon is only for displaying all the navbar links on a smaller screen, so we don't need it any more. */
-    }
-}
-@media (min-width: 1201px) { /* We want our navbar to do the same on Desktops as we do on tablets being held in landscape. */
-    nav a:not(.active) {
-        display: block;
-    }
-    nav a.icon {
-        display: none;
-    }
+/* Based on Bootstrap, changing from small screens to medium */
+@media (min-width: 768px) {
+  body {
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "main aside"
+      "footer footer";
+  }
+  nav { flex-flow: row nowrap; }
+  nav * {padding: 0.5rem;}
+  nav a:not(.active),
+  nav div.middle {display: block;}
+  nav div.open-icon,
+  nav span {display: none;}
 }
