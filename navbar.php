@@ -3,9 +3,9 @@ function generateNavbar() {
     $filename = basename($_SERVER['PHP_SELF']);
     echo '<nav>';
     echo '<a '; echo $filename == "index.php" ? 'class="active" href="#"' : 'href="index.php"'; echo '>Home</a>';
-    echo '<a '; echo $filename == "page1.php" ? 'class="active" href="#"' : 'href="onlinecv.php"'; echo '>Page 1</a>';
-    echo '<a '; echo $filename == "page2.php" ? 'class="active" href="#"' : 'href="samples.php"'; echo '>Page 2</a>';
-    echo '<a '; echo $filename == "page3.php" ? 'class="active" href="#"' : 'href="sandbox.php"'; echo '>Page 3</a>';
+    echo '<a '; echo $filename == "page1.php" ? 'class="active" href="#"' : 'href="page1.php"'; echo '>Page 1</a>';
+    echo '<a '; echo $filename == "page2.php" ? 'class="active" href="#"' : 'href="page2.php"'; echo '>Page 2</a>';
+    echo '<a '; echo $filename == "page3.php" ? 'class="active" href="#"' : 'href="page3.php"'; echo '>Page 3</a>';
     echo '<a '; echo $filename == "page4.php" ? 'class="active" href="#"' : 'href="page4.php"'; echo '>page 4</a>';
     echo '<div class="middle"></div>'
     echo '<a class="codepen" href="https://codepen.io/gavinsykesuk" target="_blank"><i class="fab fa-codepen"></i><span> Codepen</span></a>';
