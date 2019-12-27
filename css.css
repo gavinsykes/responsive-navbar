@@ -32,17 +32,31 @@ nav * {
   text-align: center;
   text-decoration: none;
 }
-nav a {display: flex; align-items: center;}
+nav a {
+  display: flex;
+  align-items: center;
+}
 nav a:not(.active),
-nav a:not(.open-icon) {display: none;}
-nav span {display: inline;}
-nav.open a {display: block;}
-nav a.active {display: block}
+nav a:not(.open-icon) {
+  display: none;
+}
+nav span {
+  display: inline;
+}
+nav.open a {
+  display: block;
+}
+nav a.active {
+  display: block
+}
 nav div.middle {
   display: none;
   flex-grow: 1;
 }
-nav div.open-icon {display: block; font-weight: bold;}
+nav div.open-icon {
+  display: block;
+  font-weight: bold;
+}
 nav a:hover {
   text-decoration: underline;
 }
@@ -56,10 +70,18 @@ nav a:hover {
       "main aside"
       "footer footer";
   }
-  nav { flex-flow: row nowrap; }
-  nav * {padding: 0.5rem;}
+  nav {
+    flex-flow: row nowrap;
+  }
+  nav * {
+    padding: 0.5rem;
+  }
   nav a:not(.active),
-  nav div.middle {display: block;}
+  nav div.middle {
+    display: block;
+  }
   nav div.open-icon,
-  nav span {display: none;}
+  nav span {
+    display: none;
+  }
 }
